@@ -9,7 +9,9 @@ class Options {
      */
     public static function get( $key ) {
 
-        $config = @include('../../config/config.php');
+        $configpath = realpath( __DIR__ . '/../../config/config.php' );
+
+        $config = @include( $configpath );
 
         if( $config === null || $config === false || !is_array( $config ) )
 
