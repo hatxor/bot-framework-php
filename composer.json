@@ -1,0 +1,49 @@
+{
+  "name": "hatxor/bot-framework-php",
+  "description": "A complete bot framework library write in php, plug and play!",
+  "homepage": "https://github.com/hatxor/bot-framework-php",
+  "license": "MIT",
+  "keywords": [
+    "Microsoft",
+    "Bot",
+    "Microsoft Bot",
+    "Skype",
+    "Skype Bot",
+    "Facebook",
+    "Facebook Bot",
+    "Telegram",
+    "Telegram Bot",
+    "Slack",
+    "Slack Bot",
+    "Email",
+    "Email Bot",
+    "Webchat",
+    "Webchat Bot"
+  ],
+  "authors": [
+    {
+      "name": "Andrés Téllez",
+      "email": "a.tellez@neversyn.com",
+      "homepage": "https://github.com/hatxor"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "require-dev": {
+    "monolog/monolog": "~1.17",
+    "squizlabs/php_codesniffer": "~2.3",
+    "phpunit/phpunit": ">=5.2",
+    "phpunit/php-code-coverage": "~3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "hatxor\\BotFramework\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "hatxor\\BotFramework\\tests\\": "tests"
+    }
+  }
+}
