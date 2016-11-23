@@ -7,9 +7,9 @@ class Options {
      * @param mixed $key The key to find in the config
      * @return mixed         The value of the selected key or null
      */
-    function static get( $key ) {
+    public static function get( $key ) {
 
-        $config = @include_once('../../config/config.php');
+        $config = @include('../../config/config.php');
 
         if( $config === null || $config === false || !is_array( $config ) )
 

@@ -1,10 +1,18 @@
 <?php namespace hatxor\BotFramework;
 
+use hatxor\BotFramework\Helpers;
+use hatxor\BotFramework\Options;
 use hatxor\BotFramework\Http;
 use hatxor\BotFramework\HttpException;
 use hatxor\BotFramework\Auth;
 use hatxor\BotFramework\AuthException;
 use hatxor\BotFramework\BotException;
+use hatxor\BotFramework\SkypeBot;
+use hatxor\BotFramework\FacebookBot;
+use hatxor\BotFramework\WebchatBot;
+use hatxor\BotFramework\EmailBot;
+use hatxor\BotFramework\TelegramBot;
+use hatxor\BotFramework\SlackBot;
 
 abstract class Bot {
 
