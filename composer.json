@@ -3,6 +3,7 @@
   "description": "A complete bot framework library write in php, plug and play!",
   "homepage": "https://github.com/hatxor/bot-framework-php",
   "license": "MIT",
+  "type": "library",
   "keywords": [
     "Microsoft",
     "Bot",
