@@ -6,7 +6,7 @@ class Http {
 
     private $connection;
 
-    private $debugFile = "/var/www/cartasian/public/microsoft-bot/tmp/debug.txt";
+    private $debugFile = "";
 
     public $permHeaders;
 
