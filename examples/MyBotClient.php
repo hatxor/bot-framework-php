@@ -157,7 +157,7 @@ class MyBotClient {
 
         $to = $this->input->from->id;
 
-        $message = "I have received \"" .  $message . "\" from " . $this->input->from->name . ".";
+        $message = "I have received \"" .  $this->input->text . "\" from " . $this->input->from->name . ".";
 
         $this->bot->addMessage( $to, $message );
 
