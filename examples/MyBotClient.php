@@ -1,7 +1,7 @@
 <?php
 
 use hatxor\BotFramework\Bot;
-use hatxor\BotFramework\Config;
+use hatxor\BotFramework\Options;
 use hatxor\BotFramework\Helpers;
 use hatxor\BotFramework\SkypeBot;
 use hatxor\BotFramework\FacebookBot;
