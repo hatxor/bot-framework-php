@@ -28,9 +28,9 @@ final class SkypeBot extends Bot {
      * @param [type] $client [description]
      * @param [type] $secret [description]
      */
-    public function __construct( $client, $secret ) {
+    public function __construct( $client, $secret, $config ) {
 
-        parent::__construct( $client, $secret );
+        parent::__construct( $client, $secret, $config );
 
     }
 

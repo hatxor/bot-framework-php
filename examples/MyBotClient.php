@@ -1,7 +1,6 @@
 <?php
 
 use hatxor\BotFramework\Bot;
-use hatxor\BotFramework\Options;
 use hatxor\BotFramework\Helpers;
 use hatxor\BotFramework\SkypeBot;
 use hatxor\BotFramework\FacebookBot;
@@ -30,10 +29,10 @@ class MyBotClient {
     /**
      * Load the configuration, create a new bot of the given type and do the login
      */
-    public function __construct() {
+    public function __construct( $config = [] ) {
 
         // 1. Load the config
-        $this->loadConfig();
+        $this->loadConfig( $config );
 
         // 2. We take the input data
         $this->input = $this->getPostRaw();
@@ -49,7 +48,7 @@ class MyBotClient {
             die("Channel not found."); // TODO Change by an exception
             
         // 5. Init our bot depending of the channel
-        $this->bot = Bot::getBotByChannel( $this->input->channelId, $this->client, $this->secret ); // TODO Try / catch to manage other errors
+        $this->bot = Bot::getBotByChannel( $this->input->channelId, $this->client, $this->secret, $config ); // TODO Try / catch to manage other errors
 
     }
 
@@ -72,13 +71,13 @@ class MyBotClient {
     /**
      * Load the configuration from the config.php file
      */
-    private function loadConfig() {
+    private function loadConfig( $config = [] ) {
 
-        $this->hash = Options::get('hash');
+        $this->hash = ( isset( $config['hash'] ) ) ? $config['hash'] : null;
 
-        $this->client = Options::get('app_client_id');
+        $this->client = ( isset( $config['app_client_id'] ) ) ? $config['app_client_id'] : null;
 
-        $this->secret = Options::get('app_secret_id');
+        $this->secret = ( isset( $config['app_secret_id'] ) ) ? $config['app_secret_id'] : null;
 
     }
 

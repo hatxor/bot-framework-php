@@ -16,9 +16,9 @@ final class WebchatBot extends Bot {
      * @param [type] $client [description]
      * @param [type] $secret [description]
      */
-    public function __construct( $client, $secret ) {
+    public function __construct( $client, $secret, $config ) {
 
-        parent::__construct( $client, $secret );
+        parent::__construct( $client, $secret, $config );
 
     }
     
@@ -39,7 +39,7 @@ final class WebchatBot extends Bot {
             'type' => $this->type_text_message,
             "text" => $message,
             "conversation" => array( "id" => $to),
-            "from" => array( "id" => ( isset( $extra['from'] ) ) ? $extra['from'] : Options::get('webchat_name') ),
+            "from" => array( "id" => ( isset( $extra['from'] ) ) ? $extra['from'] : $this->config['webchat_name'] ),
 
         );
 
@@ -72,7 +72,7 @@ final class WebchatBot extends Bot {
             'type' => $this->type_attachment[ $type ],
             "attachments" => $this->$methodName( $content, $extra, $options ),
             "conversation" => array( "id" => $to),
-            "from" => array( "id" => ( isset( $extra['from'] ) ) ? $extra['from'] : Options::get('webchat_name') ),
+            "from" => array( "id" => ( isset( $extra['from'] ) ) ? $extra['from'] : $this->config['webchat_name'] ),
 
         );
 

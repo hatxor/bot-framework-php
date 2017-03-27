@@ -16,9 +16,9 @@ final class FacebookBot extends Bot {
      * @param [type] $client [description]
      * @param [type] $secret [description]
      */
-    public function __construct( $client, $secret ) {
+    public function __construct( $client, $secret, $config ) {
 
-        parent::__construct( $client, $secret );
+        parent::__construct( $client, $secret, $config );
 
     }
     
@@ -38,7 +38,7 @@ final class FacebookBot extends Bot {
 
             'type' => $this->type_text_message,
             "text" => $message,
-            "from" => array( "id" => Options::get('fb_bot_id'), "name" => Options::get('fb_bot_name') ),
+            "from" => array( "id" => $this->config['fb_bot_id'], "name" => $this->config['fb_bot_name'] ),
 
         );
 
@@ -70,7 +70,7 @@ final class FacebookBot extends Bot {
 
             'type' => $this->type_attachment[ $type ],
             "attachments" => $this->$methodName( $content, $extra, $options ),
-            "from" => array( "id" => Options::get('fb_bot_id'), "name" => Options::get('fb_bot_name') ),
+            "from" => array( "id" => $this->config['fb_bot_id'], "name" => $this->config['fb_bot_name'] ),
 
         );
 

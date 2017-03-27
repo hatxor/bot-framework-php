@@ -1,7 +1,6 @@
 <?php namespace hatxor\BotFramework;
 
 use hatxor\BotFramework\Helpers;
-use hatxor\BotFramework\Options;
 use hatxor\BotFramework\Http;
 use hatxor\BotFramework\HttpException;
 use hatxor\BotFramework\Auth;
@@ -21,6 +20,8 @@ abstract class Bot {
     protected $client;
 
     protected $secret;
+
+    protected $config;
 
     protected $token;
 
@@ -45,11 +46,13 @@ abstract class Bot {
      * @param [type] $client [description]
      * @param [type] $secret [description]
      */
-    public function __construct( $client, $secret ) {
+    public function __construct( $client, $secret, $config ) {
 
         $this->client = $client;
 
         $this->secret = $secret;
+
+        $this->config = $config;
 
         $this->http = new Http();
 
