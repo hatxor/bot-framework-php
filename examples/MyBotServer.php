@@ -34,7 +34,7 @@ class MyBotServer {
         $this->loadConfig( $config );
 
         // 2. Init our bot depending of the channel
-        $this->bot = Bot::getBotByChannel( $channelID, $this->client, $this->secret, $config ); // TODO Try / catch para controlar los errores de que no encuentre la clase
+        $this->bot = Bot::getBotByChannel( $channelID, $this->client, $this->secret, $config, $config ); // TODO Try / catch para controlar los errores de que no encuentre la clase
 
         // 3. Do the auth
         $this->bot->authenticate();

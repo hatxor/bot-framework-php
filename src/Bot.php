@@ -66,7 +66,7 @@ abstract class Bot {
      * @param  [type] $secret    [description]
      * @return [type]            [description]
      */
-    public static function getBotByChannel( $channelID, $client, $secret ) {
+    public static function getBotByChannel( $channelID, $client, $secret, $config ) {
 
         $botClassName = self::getBotName( $channelID );
 
@@ -78,7 +78,7 @@ abstract class Bot {
 
             //file_put_contents('/var/www/cartasian/public/microsoft-bot/tmp/debug.txt', PHP_EOL . PHP_EOL . date("\[d-m-Y H:m:i\]") . ': '. $botClassName . PHP_EOL, FILE_APPEND );
 
-            return new $botClassName( $client, $secret ); // TODO Lanzar excepcion si no se encuentra la clase
+            return new $botClassName( $client, $secret, $config ); // TODO Lanzar excepcion si no se encuentra la clase
 
         }
 
